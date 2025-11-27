@@ -62,3 +62,30 @@ function handleSubmit(event) {
         date: date,
         rating: Number(rating)
     };
+    // Adding the entry to our array
+    volunteerData.push(newEntry);
+
+    // Updating the list shown on the page
+    updateDisplay();
+
+    // Clear the form after submitting
+    event.target.reset();
+  }
+
+// This function shows an error message below the form
+function showError(id, message) {
+    const errorBox = document.getElementById("form-errors");
+
+    let p = document.createElement("p");
+    p.className = "error";
+    p.style.color = "red";
+    p.textContent = message;
+
+    // Add the error message to the error box
+    errorBox.appendChild(p);
+}
+
+// This removes all old error messages before new ones appear
+function clearErrors() {
+    document.getElementById("form-errors").innerHTML = "";
+}
