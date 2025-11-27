@@ -1,0 +1,76 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc; 
+    color: #333; 
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #004080; 
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+
+form {
+    background-color: #ffffff; 
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+button {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
+
+#entriesList div {
+    background-color: #e6f0ff; 
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
