@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Volunteer Hours Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="volunteer-hours.css">
+</head>
+<body>
+    <!-- Header and Navigation (from template.html) -->
+    <header>
+        <h1> PiXELL River Volunteer Tracker</h1>
+        <nav>
+            <a href="volunteer-hours.html">Volunteer Tracker</a>
+            <a href="donation-tracker.html">Donation Tracker</a>
+            <a href="event-signup.html">Event Signup</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Log Volunteer Hours</h2>
+
+        <form id="volunteer-form">
+            <input type="text" id="charity-name" placeholder="Charity Name" required />
+            <input type="number" id="hours-volunteered" placeholder="Hours Volunteered" required min="0.1" step="0.1"/>
+            <input type="date" id="volunteer-date" required />
+            <input type="number" id="experience-rating" placeholder="Rating 1-5" min="1" max="5" required />
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="form-errors"></div>
+
+        <h3>Logged Entries</h3>
+        <ul id="volunteer-list"></ul>
+    </main>
+
+    <footer>
+        <p> PiXELL River Financial</p>
+    </footer>
+
+    <script src="volunteer-hours.js"></script>
+</body>
+</html>
