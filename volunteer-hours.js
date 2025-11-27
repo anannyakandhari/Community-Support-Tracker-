@@ -20,7 +20,8 @@ function handleSubmit(event) {
     let date = document.getElementById("volunteer-date").value;
     let rating = document.getElementById("experience-rating").value.trim();
 
-    // Remove old error messages
+}
+ // Remove old error messages
     clearErrors();
 
     // A variable to track if the form is valid
@@ -61,54 +62,3 @@ function handleSubmit(event) {
         date: date,
         rating: Number(rating)
     };
-
-    // Adding the entry to our array
-    volunteerData.push(newEntry);
-
-    // Updating the list shown on the page
-    updateDisplay();
-
-    // Clear the form after submitting
-    event.target.reset();
-}
-
-// This function shows an error message below the form
-function showError(id, message) {
-    const errorBox = document.getElementById("form-errors");
-
-    let p = document.createElement("p");
-    p.className = "error";
-    p.style.color = "red";
-    p.textContent = message;
-
-    // Add the error message to the error box
-    errorBox.appendChild(p);
-}
-
-// This removes all old error messages before new ones appear
-function clearErrors() {
-    document.getElementById("form-errors").innerHTML = "";
-}
-
-// This updates the list of volunteer entries on the page
-function updateDisplay() {
-    let list = document.getElementById("volunteer-list");
-    list.innerHTML = ""; // clear old entries
-
-    // Loop through all saved entries and display them
-    volunteerData.forEach(entry => {
-        let item = document.createElement("li");
-
-        // Showing the details of each entry
-        item.innerHTML = `
-            <strong>Charity:</strong> ${entry.charityName} <br>
-            <strong>Hours:</strong> ${entry.hours} <br>
-            <strong>Date:</strong> ${entry.date} <br>
-            <strong>Rating:</strong> ${entry.rating}
-        `;
-
-        list.appendChild(item);
-    });
-}
-
-
