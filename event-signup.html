@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        Event Signup
+    </header>
+    <nav>
+
+    </nav>
+    <main>
+        <form id="form-event-signup">
+            <label for="feld-event-name">Event Name</label>
+            <input id="field-event-name" type="text">
+
+            <label for="field-rep-name">Name of Representative</label>
+            <input id="field-rep-name" type="text">
+            
+            <label for="field-rep-email">Email of Representative</label>
+            <input id="field-rep-email" type="text">
+
+            <fieldset>
+                <label for="field-role">Role</label>
+                <select id="field-role">
+                    <option value="default"></option>
+                    <option value="organizer">Organizr</option>
+                    <option value="sponsor">Sponsor</option>
+                    <option value="participant">Participant</option>
+                </select>
+            </fieldset>
+        </form>
+    </main>
+    <script src="./event-signup.js"></script>
+</body>
+</html>
