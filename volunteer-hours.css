@@ -1,0 +1,131 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc; 
+    color: #333; 
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    background-color: #004080; 
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+
+form {
+    background-color: #ffffff; 
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+button {
+    background-color: #0073e6;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #005bb5;
+}
+
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
+
+#entriesList div {
+    background-color: #e6f0ff; 
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+/* Volunteer Table Styles - Stage 2 */
+#volunteer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+#volunteer-table th, #volunteer-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#volunteer-table th {
+    background-color: #0073e6; /* matching button color */
+    color: #fff;
+}
+
+#volunteer-table tr:nth-child(even) {
+    background-color: #f2f9ff; /* light zebra stripe */
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+/* Total Hours Summary */
+#total-hours-container {
+    margin: 15px auto;
+    max-width: 800px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: right;
+}
+
+/* Optional: keep error styling consistent */
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
