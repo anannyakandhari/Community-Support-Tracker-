@@ -1,5 +1,6 @@
-// This array will store all volunteer entries temporarily
-let volunteerData = [];
+// Load existing data from localStorage or start with empty array
+let volunteerData = JSON.parse(localStorage.getItem("volunteerData"));
+
 
 // This runs when the page finishes loading
 window.addEventListener("DOMContentLoaded", function () {
@@ -13,12 +14,15 @@ window.addEventListener("DOMContentLoaded", function () {
 // This function handles everything when the form is submitted
 function handleSubmit(event) {
     event.preventDefault(); // stops the page from refreshing
-
+   
+    
     // Getting values from the input fields (matching HTML IDs)
     let charityName = document.getElementById("charity-name").value.trim();
     let hours = document.getElementById("hours-volunteered").value.trim();
     let date = document.getElementById("volunteer-date").value;
     let rating = document.getElementById("experience-rating").value.trim();
+    
+
 
     // Remove old error messages
     clearErrors();
@@ -92,23 +96,45 @@ function clearErrors() {
 
 // This updates the list of volunteer entries on the page
 function updateDisplay() {
-    let list = document.getElementById("volunteer-list");
-    list.innerHTML = ""; // clear old entries
+    const tableBody = document.querySelector("#volunteer-table tbody");
+    tableBody.innerHTML = ""; // Clear old rows
+
+     let totalHours = 0;
     
      // Loop through all saved entries and display them
     volunteerData.forEach(entry => {
-        let item = document.createElement("li");
+        // Calculate total hours
+        totalHours += entry.hours;
+
+         // Create a table row
+        const row = document.createElement("tr");
+
 
         // Showing the details of each entry
-        item.innerHTML = `
-            <strong>Charity:</strong> ${entry.charityName} <br>
-            <strong>Hours:</strong> ${entry.hours} <br>
-            <strong>Date:</strong> ${entry.date} <br>
-            <strong>Rating:</strong> ${entry.rating}
+        row.innerHTML = `
+           <td>${entry.charityName}</td>
+           <td>${entry.hours}</td>
+           <td>${entry.date}</td>
+           <td>${entry.rating}</td> 
+            <td><button class="delete-btn">Delete</button></td>
         `;
-   
+          // Add the row to the table
+        tableBody.appendChild(row);
+        });
 
-        list.appendChild(item);
+    // Add delete functionality after rows are added
+    const deleteButtons = document.querySelectorAll(".delete-btn");
+    deleteButtons.forEach(btn => {
+        btn.addEventListener("click", function() {
+            const idx = this.getAttribute("data-index");
+            volunteerData.splice(idx, 1); // remove from array
+            // Save updated data to localStorage
+            localStorage.setItem("volunteerData", JSON.stringify(volunteerData));
+            updateDisplay(); // refresh table
+        });
     });
+
+    // Update total hours in the summary
+    document.getElementById("total-hours").textContent = totalHours;
 }
 

@@ -74,3 +74,58 @@ button:hover {
     margin-bottom: 10px;
     border-radius: 6px;
 }
+/* Volunteer Table Styles - Stage 2 */
+#volunteer-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+}
+
+#volunteer-table th, #volunteer-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+#volunteer-table th {
+    background-color: #0073e6; /* matching button color */
+    color: #fff;
+}
+
+#volunteer-table tr:nth-child(even) {
+    background-color: #f2f9ff; /* light zebra stripe */
+}
+
+/* Delete Button */
+.delete-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    background-color: #ff1a1a;
+}
+
+/* Total Hours Summary */
+#total-hours-container {
+    margin: 15px auto;
+    max-width: 800px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: right;
+}
+
+/* Optional: keep error styling consistent */
+.error {
+    color: red;
+    font-size: 14px;
+    margin: 5px 0 0 0;
+}
+
