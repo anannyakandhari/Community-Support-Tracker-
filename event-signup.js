@@ -49,12 +49,13 @@ function appendError(inputNode, message) {
     const newErrorNode = document.createElement("p");
     newErrorNode.classList.add("error");
     newErrorNode.textContent = message;
-
-    inputNode.insertAdjacentHTML("afterend", newErrorNode);
+    
+    // insertAdjacentHTML() only accepts html string, so we use insertAdjacentElement()
+    inputNode.insertAdjacentElement("afterend", newErrorNode);
 }
 
 function clearErrors() {
-    const errorNodes = document.querySelectorAll("error");
+    const errorNodes = document.querySelectorAll(".error");
 
     errorNodes.forEach(n => {
         n.remove();
