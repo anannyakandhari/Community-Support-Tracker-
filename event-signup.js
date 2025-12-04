@@ -3,7 +3,8 @@ function validateEventSignup(submitEvent) {
     clearErrors();
 
     const tempData = {};
-    const formValid = true;
+    //using let instead of const because we need to change this value later during validation
+    let formValid = true;
 
     const eventNameInputNode = document.querySelector("#field-event-name");
     if(!hasThreeChars(eventNameInputNode)) {
@@ -18,7 +19,8 @@ function validateEventSignup(submitEvent) {
         appendError(repNameInputNode, "Representative name must have at least three characters.");
         formValid = false;
     } else {
-        tempData["repName"] = eventNameInputNode.value;
+        // changing eventnameinput to rep. as we are going to store rep name not event
+        tempData["repName"] = repNameInputNode.value;
     }
 
     const repEmailInputNode = document.querySelector("#field-rep-email");
