@@ -94,8 +94,8 @@ function clearErrors() {
 function updateDisplay() {
     let list = document.getElementById("volunteer-list");
     list.innerHTML = ""; // clear old entries
-
-    // Loop through all saved entries and display them
+    
+     // Loop through all saved entries and display them
     volunteerData.forEach(entry => {
         let item = document.createElement("li");
 
@@ -106,6 +106,7 @@ function updateDisplay() {
             <strong>Date:</strong> ${entry.date} <br>
             <strong>Rating:</strong> ${entry.rating}
         `;
+   
 
         list.appendChild(item);
     });
